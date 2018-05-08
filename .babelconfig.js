@@ -2,7 +2,7 @@
 
 var isDev = process.env.npm_lifecycle_event === 'dev';
 var presets = [
-  ["env", Object.assign({"loose": true}, isDev ? {"targets": {"node": "current"}} : {})]
+  ["env", Object.assign({"loose": true, "modules": false}, isDev ? {"targets": {"node": "current"}} : {})]
 ];
 
 module.exports = {
