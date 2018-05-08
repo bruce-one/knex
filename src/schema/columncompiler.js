@@ -21,9 +21,9 @@ function ColumnCompiler(client, tableCompiler, columnBuilder) {
   this.modifiers = [];
 }
 
-ColumnCompiler.prototype.pushQuery = helpers.pushQuery
+ColumnCompiler.prototype.pushQuery = function(...args) { pushQuery.call(this, ...args) }
 
-ColumnCompiler.prototype.pushAdditional = helpers.pushAdditional
+ColumnCompiler.prototype.pushAdditional = function(...args) { pushAdditional.call(this, ...args) }
 
 ColumnCompiler.prototype._defaultMap = {
   'columnName': function() {

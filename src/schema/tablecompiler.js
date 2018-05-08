@@ -19,9 +19,9 @@ function TableCompiler(client, tableBuilder) {
   this._formatting = client.config && client.config.formatting
 }
 
-TableCompiler.prototype.pushQuery = pushQuery
+TableCompiler.prototype.pushQuery = function(...args) { pushQuery.call(this, ...args) }
 
-TableCompiler.prototype.pushAdditional = pushAdditional
+TableCompiler.prototype.pushAdditional = function(...args) { pushAdditional.call(this, ...args) }
 
 // Convert the tableCompiler toSQL
 TableCompiler.prototype.toSQL = function () {
