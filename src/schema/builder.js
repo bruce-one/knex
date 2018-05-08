@@ -3,6 +3,7 @@ import inherits from 'inherits';
 import { EventEmitter } from 'events';
 import { each, toArray } from 'lodash'
 import { addQueryContext, warn } from '../helpers';
+import _interface from '../interface'
 
 // Constructor for the builder instance, typically called from
 // `knex.builder`, accepting the current `knex` instance,
@@ -56,7 +57,7 @@ each([
   }
 })
 
-require('../interface')(SchemaBuilder)
+_interface(SchemaBuilder);
 addQueryContext(SchemaBuilder);
 
 SchemaBuilder.prototype.withSchema = function(schemaName) {
